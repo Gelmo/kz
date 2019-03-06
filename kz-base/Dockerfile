@@ -55,6 +55,6 @@ RUN mkdir /home/linuxgsm/linuxgsm/log/ \
  && mkdir /home/linuxgsm/linuxgsm/log/script/ \
  && touch /home/linuxgsm/linuxgsm/log/script/csgoserver-script.log \
  && chmod +x /home/linuxgsm/linuxgsm/lgsm/functions/*.sh \
- &&./linuxgsm.sh csgoserver
+ && ./linuxgsm.sh csgoserver
 
 CMD ["bash"]
