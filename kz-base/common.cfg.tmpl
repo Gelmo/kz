@@ -1,0 +1,19 @@
+##################################
+######## Instance Settings ########
+##################################
+# PLACE COMMON SETTINGS HERE
+#
+
+{{if (datasource "env").Envs}}
+
+{{ range (datasource "env").Envs -}}
+{{ .name }}={{ .value | quote }}
+{{ end }}
+
+{{else}}
+
+{{ range (datasource "env").envs -}}
+{{ .name }}={{ .value | quote }}
+{{ end }}
+
+{{end}}
