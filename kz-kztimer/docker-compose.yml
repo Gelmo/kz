@@ -1,0 +1,14 @@
+version: '3.1'
+services:
+  game:
+    build: .
+    ports:
+      - 27015:27015/tcp
+      - 27015:27015/udp
+    environment:
+      - LGSM_GAMESERVERNAME=csgoserver
+      - LGSM_UPDATEINSTALLSKIP=UPDATE
+    volumes:
+      - type: bind
+      - source: /path/to/local/maps
+      - target: /home/linuxgsm/linuxgsm/serverfiles/csgo/maps

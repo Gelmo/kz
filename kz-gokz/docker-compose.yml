@@ -1,7 +1,7 @@
 version: '3.1'
 services:
   game:
-    image: joshhsoj1902/linuxgsm-docker:latest
+    build: .
     ports:
       - 27015:27015/tcp
       - 27015:27015/udp
@@ -9,4 +9,6 @@ services:
       - LGSM_GAMESERVERNAME=csgoserver
       - LGSM_UPDATEINSTALLSKIP=UPDATE
     volumes:
-      - "/home/linuxgsm/linuxgsm/logs"
+      - type: bind
+      - source: /path/to/local/maps
+      - target: /home/linuxgsm/linuxgsm/serverfiles/csgo/maps
