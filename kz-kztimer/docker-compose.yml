@@ -9,6 +9,4 @@ services:
       - LGSM_GAMESERVERNAME=csgoserver
       - LGSM_UPDATEINSTALLSKIP=UPDATE
     volumes:
-      - type: bind
-      - source: /path/to/local/maps
-      - target: /home/linuxgsm/linuxgsm/serverfiles/csgo/maps
+      - C:\path\to\maps:/home/linuxgsm/linuxgsm/serverfiles/csgo/maps
