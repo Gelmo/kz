@@ -1,0 +1,2 @@
+FROM timche/csgo:latest
+
