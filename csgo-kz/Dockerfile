@@ -41,7 +41,7 @@ RUN wget -qO- https://bitbucket.org/GoD_Tony/updater/downloads/updater.smx
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/extensions
 
-RUN wget -qO- https://github.com/thraaawn/SMJansson/raw/master/bin/smjansson.ext.so | tar zxf -
+RUN wget -qO- https://github.com/thraaawn/SMJansson/raw/master/bin/smjansson.ext.so
 
 RUN chmod 600 /home/csgo/plugins/addons/sourcemod/plugins/*.smx
 RUN chmod 700 /home/csgo/plugins/addons/sourcemod/extensions/*.so
