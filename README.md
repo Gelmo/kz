@@ -33,10 +33,6 @@ Your [Game Server Login Token](https://steamcommunity.com/dev/managegameservers)
 
 Your [Steam Web API Key](https://steamcommunity.com/dev/apikey) to download workshop maps.
 
-##### `TIMER`
-
-GOKZ will always be installed, unless [`TIMER`](#timer) is set to `kztimer`
-
 ##### `CSGO_IP`
 
 Default: `0.0.0.0`
@@ -180,5 +176,6 @@ $ docker run \
 
 This readme will be updated in the future. Todo list:
 
+- Fix KZTimer support
 - Add documentation for using a separate sql instance instead of sqlite
 - Add documentation for running multiple instances in a stack via compose w/ discreet sql container and shared csgo volume
