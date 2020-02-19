@@ -163,8 +163,22 @@ Container named `csgo`:
 $ docker restart csgo
 ```
 
-This readme will be updated in the future. Currently, only GOKZ has been tested. Todo list:
+### Public Server Example
 
-- Make compatible with KZTimer
+```
+$ docker run \
+  -v=csgo:/home/csgo/server \
+  -v=/home/user/csgo:/var/csgo \
+  --net=host \
+  --env CSGO_GSLT=ABC123 \
+  --env CSGO_WS_API_KEY=123ABC \
+  --env CSGO_HOSTNAME="ServerName" \
+  --env CSGO_PW=ServerPass \
+  --name=csgo \
+  gelmo/kz
+```
+
+This readme will be updated in the future. Todo list:
+
 - Add documentation for using a separate sql instance instead of sqlite
-- Add documentation for running in a stack via compose w/ discreet sql container and shared csgo volume
+- Add documentation for running multiple instances in a stack via compose w/ discreet sql container and shared csgo volume
