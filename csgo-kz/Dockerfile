@@ -27,7 +27,6 @@ RUN wget -qO- https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/down
 RUN wget -qO- https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/downloads/GlobalAPI-Jumpstats-v.1.2.1.zip | bsdtar --strip 1 -xf -
 RUN wget -qO- https://bitbucket.org/GameChaos/zone-stopwatch/downloads/ztopwatch-1.00.zip | bsdtar xf -
 RUN wget -qO- https://gokz.tv/fastdl/gokz_particles/gokz_particles.rar | bsdtar xf -
-RUN wget -qO- https://github.com/e54385991/console-cleaner/archive/master.zip | bsdtar --strip 1 -xf - && rm -rf README.md src
 
 WORKDIR /home/csgo/plugins/addons/sourcemod
 
@@ -44,6 +43,7 @@ RUN wget -q https://bitbucket.org/GoD_Tony/updater/downloads/updater.smx
 WORKDIR /home/csgo/plugins/addons/sourcemod/extensions
 
 RUN wget -qO cleaner.ext.so https://github.com/Accelerator74/Cleaner/raw/master/Release/cleaner.ext.2.csgo.so
+RUN wget -q https://github.com/Accelerator74/Cleaner/raw/master/Release/cleaner.autoload
 RUN wget -q https://github.com/thraaawn/SMJansson/raw/master/bin/smjansson.ext.so
 
 RUN chmod 600 /home/csgo/plugins/addons/sourcemod/plugins/*.smx
