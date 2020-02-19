@@ -33,6 +33,10 @@ Your [Game Server Login Token](https://steamcommunity.com/dev/managegameservers)
 
 Your [Steam Web API Key](https://steamcommunity.com/dev/apikey) to download workshop maps.
 
+##### `TIMER`
+
+GOKZ will always be installed, unless [`TIMER`](#timer) is set to `kztimer`
+
 ##### `CSGO_IP`
 
 Default: `0.0.0.0`
@@ -58,8 +62,6 @@ Default: `16`
 The maximum players allowed to join the server.
 
 ##### `CSGO_HOSTNAME`
-
-Default: `GOKZ Server`
 
 The server name.
 
