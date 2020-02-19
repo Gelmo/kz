@@ -45,12 +45,6 @@ Default: `27015`
 
 The port the server is listening to.
 
-##### `CSGO_MAP`
-
-Default: `de_dust2`
-
-Start the server with a specific map.
-
 ##### `CSGO_MAX_PLAYERS`
 
 Default: `16`
@@ -78,24 +72,6 @@ The password to join the server.
 Default: `128`
 
 The server game tick interval.
-
-##### `CSGO_GAME_TYPE`
-
-Default: `0` (Competitive)
-
-The [game mode](https://developer.valvesoftware.com/wiki/CSGO_Game_Mode_Commands) (based on game type).
-
-##### `CSGO_GAME_MODE`
-
-Default: `1`
-
-The [game type]((https://developer.valvesoftware.com/wiki/CSGO_Game_Mode_Commands)).
-
-##### `CSGO_MAP_GROUP`
-
-Default: `mg_active`
-
-The map group.
 
 ##### `CSGO_CUSTOM_CONFIGS_DIR`
 

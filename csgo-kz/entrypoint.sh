@@ -104,7 +104,7 @@ startServer() {
   fi
 
   if [ -n "$CSGO_WS_API_KEY" ]; then
-    optionalParameters+=" -authkey $CSGO_WS_API_KEY +host_workshop_collection 1942817193"
+    optionalParameters+=" -authkey $CSGO_WS_API_KEY +host_workshop_collection 1942817193 +host_workshop_map 509624370"
   else
     echo '> Warning: Environment variable "CSGO_WS_API_KEY" is not set, so you need to mount maps and set environment variable "CSGO_CUSTOM_CONFIGS_DIR"'
   fi
@@ -119,10 +119,9 @@ startServer() {
       -port "${CSGO_PORT-27015}" \
       -tickrate "${CSGO_TICKRATE-128}" \
       -maxplayers_override "${CSGO_MAX_PLAYERS-16}" \
-      +game_type "${CSGO_GAME_TYPE-0}" \
-      +game_mode "${CSGO_GAME_MODE-1}" \
-      +mapgroup "${CSGO_MAP_GROUP-mg_active}" \
-      +map "${CSGO_MAP-de_dust2}" \
+      +game_type 3 \
+      +game_mode 0 \
+      +map de_mirage \
       $optionalParameters \
       $CSGO_PARAMS
 }
