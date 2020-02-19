@@ -44,6 +44,8 @@ RUN chmod 600 /home/csgo/plugins/addons/sourcemod/plugins/*.smx
 RUN chmod 700 /home/csgo/plugins/addons/sourcemod/extensions/*.so
 RUN chmod 700 /home/csgo/plugins/addons/sourcemod/extensions/*.autoload
 
+COPY databases.cfg /home/csgo/plugins/addons/sourcemod/configs/
+
 COPY entrypoint.sh /usr/local/bin/
 
 CMD [ "entrypoint.sh" ]
