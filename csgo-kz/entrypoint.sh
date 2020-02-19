@@ -12,32 +12,39 @@ kztimer='https://bitbucket.org/kztimerglobalteam/kztimerglobal/downloads/1.93_Fu
 mapcycle='https://kzmaps.tangoworldwide.net/mapcycles/gokz.txt'
 kztmapcycle='https://kzmaps.tangoworldwide.net/mapcycles/kztimer.txt'
 
-STEAM_DIR=$HOME/Steam
-SERVER_DIR=$HOME/server
-SERVER_INSTALLED_LOCK_FILE=$SERVER_DIR/installed.lock
-CSGO_DIR=$SERVER_DIR/csgo
+STEAM_DIR=/home/csgo/Steam
+SERVER_DIR=/home/csgo/server
+SERVER_INSTALLED_LOCK_FILE=/home/csgo/server/installed.lock
+CSGO_DIR=/home/csgo/server/csgo
 CSGO_CUSTOM_CONFIGS_DIR="${CSGO_CUSTOM_CONFIGS_DIR-/var/csgo}"
 
-installMod() {
-    echo "> Installing/Updating mod from $1 ..."
-    cd $CSGO_DIR
-    wget -qO- $1 | tar zxf -
+syncPlugins() {
+    echo "> Syncing plugins ..."
+    rsync -rti /home/csgo/plugins/ /home/csgo/server/csgo/
     echo '> Done'
 }
 
-installPlugin() {
-    echo "> Installing/Updating plugin from $1 ..."
+installGOKZ() {
+    echo "> Installing GOKZ ..."
+    cd $CSGO_DIR/plugins/addons/sourcemod/plugins
+    mv ./KZ*.smx disabled
     cd $CSGO_DIR
-    wget -q -O plugin.zip $1
+    wget -q -O plugin.zip $gokz
     unzip -qn plugin.zip
     rm plugin.zip
+    wget -q -O mapcycle.txt $mapcycle
     echo '> Done'
 }
 
-managePlugins() {
-    echo "> Managing plugins ..."
-    cd $CSGO_DIR/addons/sourcemod/plugins
-    mv !(admin-flatfile.smx|botmimic.smx|csutils.smx|practicemode.smx|pugsetup.smx|pugsetup_damageprint.smx|pugsetup_teamlocker.smx|disabled) disabled
+installKZTimer() {
+    echo "> Installing KZTimer ..."
+    cd $CSGO_DIR/plugins/addons/sourcemod/plugins
+    mv ./gokz*.smx disabled
+    cd $CSGO_DIR
+    wget -q -O plugin.zip $kztimer
+    unzip -qn plugin.zip
+    rm plugin.zip
+    wget -q -O mapcycle.txt $kztmapcycle
     echo '> Done'
 }
 
@@ -51,14 +58,6 @@ installServer() {
     +quit
 
   echo '> Done'
-
-  installMod $mmsource
-  installMod $sourcemod
-
-  installPlugin $practicemode
-  installPlugin $pugsetup
-
-  managePlugins
 
   touch $SERVER_INSTALLED_LOCK_FILE
 
@@ -138,6 +137,14 @@ if [ -f "$SERVER_INSTALLED_LOCK_FILE" ]; then
   updateServer
 else
   installServer
+fi
+
+syncPlugins
+
+if [ $TIMER = "kztimer" ]; then
+  installKZTimer
+else
+  installGOKZ
 fi
 
 applyCustomConfigs
