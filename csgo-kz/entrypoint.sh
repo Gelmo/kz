@@ -104,7 +104,7 @@ startServer() {
   fi
 
   if [ -n "$CSGO_WS_API_KEY" ]; then
-    optionalParameters+=" -authkey $CSGO_WS_API_KEY"
+    optionalParameters+=" -authkey $CSGO_WS_API_KEY +host_workshop_collection 1942817193"
   else
     echo '> Warning: Environment variable "CSGO_WS_API_KEY" is not set, so you need to mount maps and set environment variable "CSGO_CUSTOM_CONFIGS_DIR"'
   fi
