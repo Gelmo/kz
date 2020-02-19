@@ -16,7 +16,7 @@ RUN mkdir plugins
 
 WORKDIR /home/csgo/plugins
 
-COPY addons /home/csgo/plugins/addons
+COPY --chown=csgo addons /home/csgo/plugins/addons
 
 RUN wget -qO- https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git971-linux.tar.gz | tar zxf -
 RUN wget -qO- https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6462-linux.tar.gz | tar zxf -
