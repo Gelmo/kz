@@ -27,7 +27,9 @@ syncPlugins() {
 installGOKZ() {
     echo "> Installing GOKZ ..."
     cd $CSGO_DIR/addons/sourcemod/plugins
-    mv ./KZ*.smx disabled
+    if [ -f ./KZ* ]; then
+      mv ./KZ*.smx disabled
+    fi
     cd $CSGO_DIR
     wget -q -O plugin.zip $gokz
     unzip -qn plugin.zip
@@ -39,7 +41,9 @@ installGOKZ() {
 installKZTimer() {
     echo "> Installing KZTimer ..."
     cd $CSGO_DIR/addons/sourcemod/plugins
-    mv ./gokz*.smx disabled
+    if [ -f ./gokz* ]; then
+      mv ./gokz*.smx disabled
+    fi
     cd $CSGO_DIR
     wget -q -O plugin.zip $kztimer
     unzip -qn plugin.zip
@@ -141,7 +145,7 @@ fi
 
 syncPlugins
 
-if [ $TIMER == "kztimer" ]; then
+if [ "$TIMER" == "kztimer" ]; then
   installKZTimer
 else
   installGOKZ
