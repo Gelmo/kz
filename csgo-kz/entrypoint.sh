@@ -6,34 +6,11 @@ set -x
 
 shopt -s extglob
 
-mmsource='https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git971-linux.tar.gz'
-sourcemod='https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6458-linux.tar.gz'
-
-dhooks='https://users.alliedmods.net/~drifter/builds/dhooks/2.2/dhooks-2.2.0-hg132-linux.tar.gz'
-steamworks='https://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git131-linux.tar.gz'
-smjansson='https://github.com/thraaawn/SMJansson/raw/master/bin/smjansson.ext.so'
-updater='https://bitbucket.org/GoD_Tony/updater/downloads/updater.smx'
-cleaner='https://github.com/e54385991/console-cleaner.git'
-
 gokz='https://bitbucket.org/kztimerglobalteam/gokz/downloads/GOKZ-latest.zip'
 kztimer='https://bitbucket.org/kztimerglobalteam/kztimerglobal/downloads/1.93_Full.zip'
 
-movementapi='https://github.com/danzayau/MovementAPI/releases/download/2.1.0/MovementAPI-v2.1.0.zip'
-globalcore='https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/downloads/GlobalAPI-Core-v.1.2.0.zip'
-globaljump='https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/downloads/GlobalAPI-Jumpstats-v.1.2.1.zip'
-
-movementhud='https://bitbucket.org/Sikarii/movementhud/downloads/MovementHUD-latest.smx'
-ztopwatch='https://bitbucket.org/GameChaos/zone-stopwatch/downloads/ztopwatch-1.00.zip'
-scoreboard='https://github.com/DevRuto/GOKZ-Scoreboard-Timer/releases/download/0.05/scoreboardtimer.smx'
-mapchooser='https://build.kxnrl.com/MapChooser-Redux/1.10/MapChooser-Redux-git188-c98291d.zip'
-
-particlesfix='https://gokz.tv/fastdl/gokz_particles/gokz_particles.rar'
-speedpanelfix='https://github.com/Franc1sco/FixHintColorMessages/raw/master/FixHintColorMessages.smx'
-crashfix='https://github.com/ismail0234/Benson-Map-Crash-Fixer/raw/master/mapcrashfixer.smx'
 mapcycle='https://kzmaps.tangoworldwide.net/mapcycles/gokz.txt'
-
-practicemode='https://github.com/splewis/csgo-practice-mode/releases/download/1.3.3/practicemode_1.3.3.zip'
-pugsetup='https://github.com/splewis/csgo-pug-setup/releases/download/2.0.5/pugsetup_2.0.5.zip'
+kztmapcycle='https://kzmaps.tangoworldwide.net/mapcycles/kztimer.txt'
 
 STEAM_DIR=$HOME/Steam
 SERVER_DIR=$HOME/server
