@@ -53,6 +53,10 @@ COPY databases.cfg /home/csgo/plugins/addons/sourcemod/configs/
 
 COPY entrypoint.sh /home/csgo/
 
+USER root
+
 RUN chmod +x /home/csgo/entrypoint.sh
+
+USER csgo
 
 CMD [ "/home/csgo/entrypoint.sh" ]
