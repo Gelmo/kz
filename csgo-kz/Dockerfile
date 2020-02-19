@@ -33,15 +33,15 @@ RUN wget -qO chooser.zip https://build.kxnrl.com/MapChooser-Redux/1.10/MapChoose
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/plugins
 
-RUN wget -qO- https://bitbucket.org/Sikarii/movementhud/downloads/MovementHUD-latest.smx
-RUN wget -qO- https://github.com/DevRuto/GOKZ-Scoreboard-Timer/releases/download/0.05/scoreboardtimer.smx
-RUN wget -qO- https://github.com/Franc1sco/FixHintColorMessages/raw/master/FixHintColorMessages.smx
-RUN wget -qO- https://github.com/ismail0234/Benson-Map-Crash-Fixer/raw/master/mapcrashfixer.smx
-RUN wget -qO- https://bitbucket.org/GoD_Tony/updater/downloads/updater.smx
+RUN wget -q https://bitbucket.org/Sikarii/movementhud/downloads/MovementHUD-latest.smx
+RUN wget -q https://github.com/DevRuto/GOKZ-Scoreboard-Timer/releases/download/0.05/scoreboardtimer.smx
+RUN wget -q https://github.com/Franc1sco/FixHintColorMessages/raw/master/FixHintColorMessages.smx
+RUN wget -q https://github.com/ismail0234/Benson-Map-Crash-Fixer/raw/master/mapcrashfixer.smx
+RUN wget -q https://bitbucket.org/GoD_Tony/updater/downloads/updater.smx
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/extensions
 
-RUN wget -qO- https://github.com/thraaawn/SMJansson/raw/master/bin/smjansson.ext.so
+RUN wget -q https://github.com/thraaawn/SMJansson/raw/master/bin/smjansson.ext.so
 
 RUN chmod 600 /home/csgo/plugins/addons/sourcemod/plugins/*.smx
 RUN chmod 700 /home/csgo/plugins/addons/sourcemod/extensions/*.so
