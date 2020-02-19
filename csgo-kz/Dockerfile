@@ -43,6 +43,7 @@ RUN wget -q https://bitbucket.org/GoD_Tony/updater/downloads/updater.smx
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/extensions
 
+RUN rm cleaner.autoload cleaner.ext.2.csgo.dll
 RUN wget -qO cleaner.ext.so https://github.com/Accelerator74/Cleaner/raw/master/Release/cleaner.ext.2.csgo.so
 RUN wget -q https://github.com/Accelerator74/Cleaner/raw/master/Release/cleaner.autoload
 RUN wget -q https://github.com/thraaawn/SMJansson/raw/master/bin/smjansson.ext.so
