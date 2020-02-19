@@ -5,6 +5,7 @@ USER root
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     wait-for-it \
+    bsdtar \
     && rm -rf /var/lib/apt/lists/*
 
 USER csgo
