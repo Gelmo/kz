@@ -20,7 +20,6 @@ COPY --chown=csgo addons /home/csgo/plugins/addons
 
 RUN wget -qO- https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git971-linux.tar.gz | tar zxf -
 RUN wget -qO- https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6462-linux.tar.gz | tar zxf -
-RUN wget -qO- https://users.alliedmods.net/~drifter/builds/dhooks/2.2/dhooks-2.2.0-hg132-linux.tar.gz | tar zxf -
 RUN wget -qO- https://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git131-linux.tar.gz | tar zxf -
 RUN wget -qO- https://github.com/danzayau/MovementAPI/releases/download/2.1.0/MovementAPI-v2.1.0.zip | bsdtar xf -
 RUN wget -qO- https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/downloads/GlobalAPI-Core-v.1.2.0.zip | bsdtar --strip 1 -xf -
@@ -31,7 +30,7 @@ RUN wget -qO- https://github.com/e54385991/console-cleaner/archive/master.zip | 
 
 WORKDIR /home/csgo/plugins/addons/sourcemod
 
-RUN wget -qO chooser.zip https://build.kxnrl.com/MapChooser-Redux/1.10/MapChooser-Redux-git188-c98291d.zip && bsdtar -xf chooser.zip && rm chooser.zip LICENSE README.md
+RUN wget -qO chooser.zip https://build.kxnrl.com/MapChooser-Redux/1.10/MapChooser-Redux-git189-b58717e.zip && bsdtar -xf chooser.zip && rm chooser.zip LICENSE README.md
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/plugins
 
