@@ -30,7 +30,7 @@ RUN wget -qO- https://github.com/e54385991/console-cleaner/archive/master.zip | 
 
 WORKDIR /home/csgo/plugins/addons/sourcemod
 
-RUN wget -qO chooser.zip https://build.kxnrl.com/MapChooser-Redux/1.10/MapChooser-Redux-git189-b58717e.zip && bsdtar -xf chooser.zip && rm chooser.zip LICENSE README.md
+RUN wget -qO chooser.zip https://build.kxnrl.com/MapChooser-Redux/1.10/MapChooser-Redux-git190-e5cc82e.zip && bsdtar -xf chooser.zip && rm chooser.zip LICENSE README.md
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/plugins
 
