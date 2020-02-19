@@ -2,8 +2,7 @@ FROM timche/csgo:latest
 
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-    wait-for-it \
-    && rm -rf /var/lib/apt/lists/*
+    wait-for-it
 
 USER csgo
 
