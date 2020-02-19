@@ -16,7 +16,7 @@ RUN mkdir plugins
 
 WORKDIR /home/csgo/plugins
 
-COPY dhooks-2.2.0-detours9-sm110.zip /home/csgo/plugins/
+COPY addons /home/csgo/plugins/addons
 
 RUN bsdtar -xf dhooks-2.2.0-detours9-sm110.zip && rm dhooks-2.2.0-detours9-sm110.zip
 RUN wget -qO- https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git971-linux.tar.gz | tar zxf -
