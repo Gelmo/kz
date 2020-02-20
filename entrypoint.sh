@@ -30,6 +30,8 @@ installGOKZ() {
     if [ -f ./KZTimerGlobal.smx ]; then
       mv ./KZ*.smx disabled
     fi
+    mv ./fun*.smx disabled
+    mv ./playercommands.smx disabled
     cd $CSGO_DIR
     wget -q -O plugin.zip $gokz
     unzip -qn plugin.zip
@@ -44,6 +46,8 @@ installKZTimer() {
     if [ -f ./gokz-core.smx ]; then
       mv ./gokz*.smx disabled
     fi
+    mv ./fun*.smx disabled
+    mv ./playercommands.smx disabled
     cd $CSGO_DIR
     wget -q -O plugin.zip $kztimer
     unzip -qn plugin.zip
