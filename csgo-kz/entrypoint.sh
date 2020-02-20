@@ -174,6 +174,12 @@ if [ "$DLMAPS" == "yes" ]; then
   fi
 fi
 
+if [ "$MAPCHOOSER" == "yes" ]; then
+  mv $CSGO_DIR/addons/sourcemod/plugins/disabled/mapchooser.smx $CSGO_DIR/addons/sourcemod/plugins/
+  mv $CSGO_DIR/addons/sourcemod/plugins/disabled/nominations.smx $CSGO_DIR/addons/sourcemod/plugins/
+  mv $CSGO_DIR/addons/sourcemod/plugins/disabled/rockthevote.smx $CSGO_DIR/addons/sourcemod/plugins/
+fi
+
 applyCustomConfigs
 
 startServer

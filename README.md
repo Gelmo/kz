@@ -43,6 +43,12 @@ Default: not set
 
 Requires [`CSGO_WS_API_KEY`](#csgo_ws_api_key) to be set. If [`DLMAPS`](#dlmaps) is set to `yes`, all global maps will be synced with their corresponding workshop data; all global maps will be downloaded. This will take a long time and use much more space.
 
+##### `MAPCHOOSER`
+
+Default: not set
+
+If [`MAPCHOOSER`](#mapchooser) is set to `yes`, the default Sourcemod mapchooser will be enabled.
+
 ##### `CSGO_IP`
 
 Default: `0.0.0.0`
@@ -145,7 +151,7 @@ Container named `csgo`:
 $ docker restart csgo
 ```
 
-### Public Server Example
+### Private Server Example w/ custom configs, workshop maps, and the Sourcemod mapchooser
 
 ```
 $ docker run \
@@ -156,6 +162,8 @@ $ docker run \
   --env CSGO_WS_API_KEY=123ABC \
   --env CSGO_HOSTNAME="ServerName" \
   --env CSGO_PW=ServerPass \
+  --env DLMAPS=yes \
+  --env MAPCHOOSER=yes \
   --name=csgo \
   gelmo/kz
 ```
