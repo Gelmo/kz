@@ -54,16 +54,16 @@ installKZTimer() {
 
 downloadMaps() {
     echo "> Downloading maps ..."
-    cd $CSGO_DIR/maps/workshop
+    cd /home/csgo/server/csgo/maps/workshop
     /bin/bash /home/csgo/mapsync.sh
-    cd $CSGO_DIR
+    cd /home/csgo/server/csgo
 }
 
 downloadMapsKZT() {
     echo "> Downloading maps ..."
-    cd $CSGO_DIR/maps/workshop
+    cd /home/csgo/server/csgo/maps/workshop
     /bin/bash /home/csgo/mapsynckzt.sh
-    cd $CSGO_DIR
+    cd /home/csgo/server/csgo
 }
 
 installServer() {
