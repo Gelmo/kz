@@ -52,6 +52,20 @@ installKZTimer() {
     echo '> Done'
 }
 
+downloadMaps() {
+    echo "> Downloading maps ..."
+    cd $CSGO_DIR/maps/workshop
+    /bin/bash /home/csgo/mapsync.sh
+    cd $CSGO_DIR
+}
+
+downloadMapsKZT() {
+    echo "> Downloading maps ..."
+    cd $CSGO_DIR/maps/workshop
+    /bin/bash /home/csgo/mapsynckzt.sh
+    cd $CSGO_DIR
+}
+
 installServer() {
   echo '> Installing server ...'
 
@@ -104,7 +118,7 @@ startServer() {
   fi
 
   if [ -n "$CSGO_WS_API_KEY" ]; then
-    optionalParameters+=" -authkey $CSGO_WS_API_KEY +host_workshop_collection 1942817193 +host_workshop_map 509624370"
+    optionalParameters+=" -authkey $CSGO_WS_API_KEY +host_workshop_collection 1942796140 +host_workshop_map 1889054384"
   else
     echo '> Warning: Environment variable "CSGO_WS_API_KEY" is not set, so you need to mount maps and set environment variable "CSGO_CUSTOM_CONFIGS_DIR"'
   fi
@@ -150,6 +164,14 @@ if [ "$TIMER" == "kztimer" ]; then
   installKZTimer
 else
   installGOKZ
+fi
+
+if [ "$DLMAPS" == "yes" ]; then
+  if [ "$TIMER" == "kztimer" ]; then
+    downloadMapsKZT
+  else
+    downloadMaps
+  fi
 fi
 
 applyCustomConfigs

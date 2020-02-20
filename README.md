@@ -37,6 +37,12 @@ Your [Steam Web API Key](https://steamcommunity.com/dev/apikey) to download work
 
 GOKZ will always be installed, unless [`TIMER`](#timer) is set to `kztimer`
 
+##### `DLMAPS`
+
+Default: not set
+
+Requires [`CSGO_WS_API_KEY`](#csgo_ws_api_key) to be set. If [`DLMAPS`](#dlmaps) is set to `yes`, all global maps will be synced with their corresponding workshop data; all global maps will be downloaded. This will take a long time and use much more space.
+
 ##### `CSGO_IP`
 
 Default: `0.0.0.0`
