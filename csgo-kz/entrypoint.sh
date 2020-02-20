@@ -52,19 +52,19 @@ installKZTimer() {
     echo '> Done'
 }
 
-downloadMaps() {
-    echo "> Downloading maps ..."
-    cd /home/csgo/server/csgo/maps/workshop
-    /bin/bash /home/csgo/mapsync.sh
-    cd /home/csgo/server/csgo
-}
+#downloadMaps() {
+#    echo "> Downloading maps ..."
+#    cd /home/csgo/server/csgo/maps/workshop
+#    /bin/bash /home/csgo/mapsync.sh
+#    cd /home/csgo/server/csgo
+#}
 
-downloadMapsKZT() {
-    echo "> Downloading maps ..."
-    cd /home/csgo/server/csgo/maps/workshop
-    /bin/bash /home/csgo/mapsynckzt.sh
-    cd /home/csgo/server/csgo
-}
+#downloadMapsKZT() {
+#    echo "> Downloading maps ..."
+#    cd /home/csgo/server/csgo/maps/workshop
+#    /bin/bash /home/csgo/mapsynckzt.sh
+#    cd /home/csgo/server/csgo
+#}
 
 installServer() {
   echo '> Installing server ...'
@@ -123,9 +123,9 @@ startServer() {
     echo '> Warning: Environment variable "CSGO_WS_API_KEY" is not set, so you need to mount maps and set environment variable "CSGO_CUSTOM_CONFIGS_DIR"'
   fi
 
-  if [ "$DLMAPS" == "yes" ]; then
-    optionalParameters+=" -nowatchdog"
-  fi
+  #if [ "$DLMAPS" == "yes" ]; then
+  #  optionalParameters+=" -nowatchdog"
+  #fi
 
   $SERVER_DIR/srcds_run \
       -game csgo \
@@ -170,13 +170,13 @@ else
   installGOKZ
 fi
 
-if [ "$DLMAPS" == "yes" ]; then
-  if [ "$TIMER" == "kztimer" ]; then
-    downloadMapsKZT
-  else
-    downloadMaps
-  fi
-fi
+#if [ "$DLMAPS" == "yes" ]; then
+#  if [ "$TIMER" == "kztimer" ]; then
+#    downloadMapsKZT
+#  else
+#    downloadMaps
+#  fi
+#fi
 
 if [ "$MAPCHOOSER" == "yes" ]; then
   mv $CSGO_DIR/addons/sourcemod/plugins/disabled/mapchooser.smx $CSGO_DIR/addons/sourcemod/plugins/
