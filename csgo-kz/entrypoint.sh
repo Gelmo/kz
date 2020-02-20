@@ -123,6 +123,10 @@ startServer() {
     echo '> Warning: Environment variable "CSGO_WS_API_KEY" is not set, so you need to mount maps and set environment variable "CSGO_CUSTOM_CONFIGS_DIR"'
   fi
 
+  if [ "$DLMAPS" == "yes" ]; then
+    optionalParameters+=" -nowatchdog"
+  fi
+
   $SERVER_DIR/srcds_run \
       -game csgo \
       -console \
