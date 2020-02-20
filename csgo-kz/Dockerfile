@@ -19,7 +19,6 @@ RUN mkdir plugins
 WORKDIR /home/csgo/plugins
 
 COPY --chown=csgo addons /home/csgo/plugins/addons
-COPY --chown=csgo cfg /home/csgo/plugins/cfg
 
 RUN wget -qO- https://mms.alliedmods.net/mmsdrop/1.10/mmsource-1.10.7-git971-linux.tar.gz | tar zxf -
 RUN wget -qO- https://sm.alliedmods.net/smdrop/1.10/sourcemod-1.10.0-git6462-linux.tar.gz | tar zxf -
@@ -29,10 +28,6 @@ RUN wget -qO- https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/down
 RUN wget -qO- https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/downloads/GlobalAPI-Jumpstats-v.1.2.1.zip | bsdtar --strip 1 -xf -
 RUN wget -qO- https://bitbucket.org/GameChaos/zone-stopwatch/downloads/ztopwatch-1.00.zip | bsdtar xf -
 RUN wget -qO- https://gokz.tv/fastdl/gokz_particles/gokz_particles.rar | bsdtar xf -
-
-WORKDIR /home/csgo/plugins/addons/sourcemod
-
-RUN wget -qO chooser.zip https://build.kxnrl.com/MapChooser-Redux/1.10/MapChooser-Redux-git190-e5cc82e.zip && bsdtar -xf chooser.zip && rm chooser.zip LICENSE README.md
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/plugins
 
