@@ -37,12 +37,13 @@ Your [Steam Web API Key](https://steamcommunity.com/dev/apikey) to download work
 
 GOKZ will always be installed, unless [`TIMER`](#timer) is set to `kztimer`
 
+<!--
 ##### `DLMAPS`
 
 Default: not set
 
 Requires [`CSGO_WS_API_KEY`](#csgo_ws_api_key) to be set. If [`DLMAPS`](#dlmaps) is set to `yes`, all global maps will be synced with their corresponding workshop data; all global maps will be downloaded. This will take a long time and use much more space.
-
+-->
 ##### `MAPCHOOSER`
 
 Default: not set
@@ -151,7 +152,7 @@ Container named `csgo`:
 $ docker restart csgo
 ```
 
-### Private Server Example w/ custom configs, workshop maps, and the Sourcemod mapchooser
+### Private Server Example w/ custom configs, and the Sourcemod mapchooser
 
 ```
 $ docker run \
@@ -162,7 +163,6 @@ $ docker run \
   --env CSGO_WS_API_KEY=123ABC \
   --env CSGO_HOSTNAME="ServerName" \
   --env CSGO_PW=ServerPass \
-  --env DLMAPS=yes \
   --env MAPCHOOSER=yes \
   --name=csgo \
   gelmo/kz
@@ -170,5 +170,6 @@ $ docker run \
 
 This readme will be updated in the future. Todo list:
 
+- Automatically download workshop maps
 - Add documentation for using a separate sql instance instead of sqlite
 - Add documentation for running multiple instances in a stack via compose w/ discreet sql container and shared csgo volume
