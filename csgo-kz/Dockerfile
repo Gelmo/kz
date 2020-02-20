@@ -6,6 +6,8 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
     wait-for-it \
     bsdtar \
+    curl \
+    jq \
     && rm -rf /var/lib/apt/lists/*
 
 USER csgo
