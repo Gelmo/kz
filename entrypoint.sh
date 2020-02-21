@@ -6,7 +6,7 @@ set -x
 
 shopt -s extglob
 
-gokz='https://bitbucket.org/kztimerglobalteam/gokz/downloads/GOKZ-v2.6.2.zip'
+gokz='https://bitbucket.org/kztimerglobalteam/gokz/downloads/GOKZ-latest.zip'
 kztimer='https://bitbucket.org/kztimerglobalteam/kztimerglobal/downloads/1.93_Full.zip'
 
 mapcycle='https://kzmaps.tangoworldwide.net/mapcycles/gokz.txt'
