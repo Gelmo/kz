@@ -37,6 +37,7 @@ installGOKZ() {
     unzip -qn plugin.zip
     rm plugin.zip
     wget -q -O mapcycle.txt $mapcycle
+    cp -p mapcycle.txt $CSGO_DIR/cfg/sourcemod/gokz/gokz-localranks-mappool.cfg
     echo '> Done'
 }
 
