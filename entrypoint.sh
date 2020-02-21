@@ -6,8 +6,9 @@ set -x
 
 shopt -s extglob
 
-gokz='https://bitbucket.org/kztimerglobalteam/gokz/downloads/GOKZ-latest.zip'
-kztimer='https://bitbucket.org/kztimerglobalteam/kztimerglobal/downloads/1.93_Full.zip'
+gokz="https://bitbucket.org/kztimerglobalteam/gokz/downloads/GOKZ-latest.zip"
+kztver=($(wget -qO- http://updater.kztimerglobal.com/KZTimerGlobal.txt | grep Latest | awk -F "\"" '{print $4}'))
+kztimer="https://bitbucket.org/kztimerglobalteam/kztimerglobal/downloads/${kztver}_Full.zip"
 
 mapcycle='https://kzmaps.tangoworldwide.net/mapcycles/gokz.txt'
 kztmapcycle='https://kzmaps.tangoworldwide.net/mapcycles/kztimer.txt'
