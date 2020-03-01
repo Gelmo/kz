@@ -6,8 +6,9 @@ set -x
 
 shopt -s extglob
 
-gokz='https://bitbucket.org/kztimerglobalteam/gokz/downloads/GOKZ-latest.zip'
-kztimer='https://bitbucket.org/kztimerglobalteam/kztimerglobal/downloads/1.93_Full.zip'
+gokz="https://bitbucket.org/kztimerglobalteam/gokz/downloads/GOKZ-latest.zip"
+kztver=($(wget -qO- http://updater.kztimerglobal.com/KZTimerGlobal.txt | grep Latest | awk -F "\"" '{print $4}'))
+kztimer="https://bitbucket.org/kztimerglobalteam/kztimerglobal/downloads/${kztver}_Full.zip"
 
 mapcycle='https://kzmaps.tangoworldwide.net/mapcycles/gokz.txt'
 kztmapcycle='https://kzmaps.tangoworldwide.net/mapcycles/kztimer.txt'
@@ -123,7 +124,7 @@ startServer() {
   fi
 
   if [ -n "$CSGO_WS_API_KEY" ]; then
-    optionalParameters+=" -authkey $CSGO_WS_API_KEY +host_workshop_map 1889054384"
+    optionalParameters+=" -authkey $CSGO_WS_API_KEY +host_workshop_map 1326959512"
   else
     echo '> Warning: Environment variable "CSGO_WS_API_KEY" is not set, so you need to mount maps and set environment variable "CSGO_CUSTOM_CONFIGS_DIR"'
   fi
