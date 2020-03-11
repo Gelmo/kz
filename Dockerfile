@@ -20,8 +20,8 @@ WORKDIR /home/csgo/plugins
 
 COPY --chown=csgo addons /home/csgo/plugins/addons
 
-RUN wget -qO- https://mms.alliedmods.net/mmsdrop/1.10/$(curl https://mms.alliedmods.net/mmsdrop/1.10/mmsource-latest-linux) | tar zxf -
-RUN wget -qO- https://sm.alliedmods.net/smdrop/1.10/$(curl https://sm.alliedmods.net/smdrop/1.10/sourcemod-latest-linux) | tar zxf -
+RUN wget -qO- https://mms.alliedmods.net/mmsdrop/1.10/$(curl -s https://mms.alliedmods.net/mmsdrop/1.10/mmsource-latest-linux) | tar zxf -
+RUN wget -qO- https://sm.alliedmods.net/smdrop/1.10/$(curl -s https://sm.alliedmods.net/smdrop/1.10/sourcemod-latest-linux) | tar zxf -
 RUN wget -qO- https://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-git131-linux.tar.gz | tar zxf -
 RUN wget -qO- https://github.com/danzayau/MovementAPI/releases/download/2.1.0/MovementAPI-v2.1.0.zip | bsdtar xf -
 RUN wget -qO- https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/downloads/GlobalAPI-Core-v.1.2.0.zip | bsdtar --strip 1 -xf -
