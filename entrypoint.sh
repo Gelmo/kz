@@ -58,20 +58,6 @@ installKZTimer() {
     echo '> Done'
 }
 
-#downloadMaps() {
-#    echo "> Downloading maps ..."
-#    cd /home/csgo/server/csgo/maps/workshop
-#    /bin/bash /home/csgo/mapsync.sh
-#    cd /home/csgo/server/csgo
-#}
-
-#downloadMapsKZT() {
-#    echo "> Downloading maps ..."
-#    cd /home/csgo/server/csgo/maps/workshop
-#    /bin/bash /home/csgo/mapsynckzt.sh
-#    cd /home/csgo/server/csgo
-#}
-
 installServer() {
   echo '> Installing server ...'
 
@@ -176,13 +162,19 @@ else
   installGOKZ
 fi
 
-#if [ "$DLMAPS" == "yes" ]; then
-#  if [ "$TIMER" == "kztimer" ]; then
-#    downloadMapsKZT
-#  else
-#    downloadMaps
-#  fi
-#fi
+if [ "$DLMAPS" == "yes" ]; then
+  echo '> Downloading Maps ... (this may take a while)'
+    if [ "$TIMER" == "kztimer" ]; then
+        maplist=$(curl -s https://kzmaps.tangoworldwide.net/mapcycles/kztimer.txt)
+    else
+        maplist=$(curl -s https://kzmaps.tangoworldwide.net/mapcycles/gokz.txt)
+    fi
+
+    for i in $maplist; do
+        wget -q -P $CSGO_DIR/maps https://kzmaps.tangoworldwide.net/bsps/$i.bsp
+    done
+  echo -e '\n> Done'
+fi
 
 if [ "$MAPCHOOSER" == "yes" ]; then
   mv $CSGO_DIR/addons/sourcemod/plugins/disabled/mapchooser.smx $CSGO_DIR/addons/sourcemod/plugins/
