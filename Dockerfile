@@ -26,7 +26,7 @@ RUN wget -qO- https://users.alliedmods.net/~kyles/builds/SteamWorks/SteamWorks-g
 RUN wget -qO- https://github.com/danzayau/MovementAPI/releases/download/2.1.0/MovementAPI-v2.1.0.zip | bsdtar xf -
 RUN wget -qO- https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/downloads/GlobalAPI-Core-v.1.2.0.zip | bsdtar --strip 1 -xf -
 RUN wget -qO- https://bitbucket.org/kztimerglobalteam/globalrecordssmplugin/downloads/GlobalAPI-Jumpstats-v.1.2.1.zip | bsdtar --strip 1 -xf -
-RUN wget -qO- https://bitbucket.org/GameChaos/zone-stopwatch/downloads/ztopwatch-1.00.zip | bsdtar xf -
+RUN wget -qO- https://bitbucket.org/GameChaos/zone-stopwatch/downloads/ztopwatch-1.01.zip | bsdtar xf -
 RUN wget -qO- https://gokz.tv/fastdl/gokz_particles/gokz_particles.rar | bsdtar xf -
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/plugins
