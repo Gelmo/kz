@@ -35,7 +35,7 @@ installGOKZ() {
     mv ./playercommands.smx disabled
     cd $CSGO_DIR
     wget -q -O plugin.zip $gokz
-    unzip -qn plugin.zip
+    unzip -qo plugin.zip
     rm plugin.zip
     wget -q -O mapcycle.txt $mapcycle
     cp -p mapcycle.txt $CSGO_DIR/cfg/sourcemod/gokz/gokz-localranks-mappool.cfg
@@ -52,7 +52,7 @@ installKZTimer() {
     mv ./playercommands.smx disabled
     cd $CSGO_DIR
     wget -q -O plugin.zip $kztimer
-    unzip -qn plugin.zip
+    unzip -qo plugin.zip
     rm plugin.zip
     wget -q -O mapcycle.txt $kztmapcycle
     echo '> Done'
