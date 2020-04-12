@@ -104,6 +104,10 @@ Print commands in the log.
 
 Additional [parameters](https://developer.valvesoftware.com/wiki/Command_Line_Options#Command-line_parameters) to pass to `srcds_run`.
 
+##### `KZ_API_KEY`
+
+Set this variable to your API key for GlobalAPI, and the globalrecords.cfg file will be created for you. More information on that is available as a [guide on the GOKZ forums](https://forum.gokz.org/p/guide-whitelist). The KZ Server Advisor Plugin is already included in this image.
+
 ### Populate with Own Configs and Maps
 
 The server can be populated with your own config files and maps by copying the files from the custom configs directory located at [`CSGO_CUSTOM_CONFIGS_DIR`](#csgo_custom_configs_dir) to the `csgo` folder at each start of the container. [`CSGO_CUSTOM_CONFIGS_DIR`](#csgo_custom_configs_dir) is a mounted directory from the host system. The custom configs and maps directory must have the same folder structure as the `csgo` folder in order to add or overwrite the files at the paths.
@@ -164,6 +168,7 @@ $ docker run \
   --env CSGO_HOSTNAME="ServerName" \
   --env CSGO_PW=ServerPass \
   --env MAPCHOOSER=yes \
+  --env KZ_API_KEY=12345678-abcd-1234-abcd-1234567890ab
   --name=csgo \
   gelmo/kz
 ```

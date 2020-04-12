@@ -129,6 +129,12 @@ startServer() {
     echo '> Warning: Environment variable "CSGO_WS_API_KEY" is not set, so you need to mount maps and set environment variable "CSGO_CUSTOM_CONFIGS_DIR"'
   fi
 
+  if [ -n "$KZ_API_KEY" ]; then
+    echo $KZ_API_KEY > $CSGO_DIR/cfg/sourcemod/globalrecords.cfg
+  else
+    echo '> Warning: Environment variable "KZ_API_KEY" is not set, so you need to mount globalrecords.cfg and set environment variable "CSGO_CUSTOM_CONFIGS_DIR" if you intend to make this server "global"'
+  fi
+
   #if [ "$DLMAPS" == "yes" ]; then
   #  optionalParameters+=" -nowatchdog"
   #fi
