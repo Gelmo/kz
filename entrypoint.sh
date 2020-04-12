@@ -9,6 +9,8 @@ shopt -s extglob
 gokz="https://bitbucket.org/kztimerglobalteam/gokz/downloads/GOKZ-latest.zip"
 kztver=($(wget -qO- http://updater.kztimerglobal.com/KZTimerGlobal.txt | grep Latest | awk -F "\"" '{print $4}'))
 kztimer="https://bitbucket.org/kztimerglobalteam/kztimerglobal/downloads/${kztver}_Full.zip"
+mhudtrackgokz="https://bitbucket.org/Sikarii/movementhud-tracking/downloads/MovementHUD-Tracking-GOKZ-latest.smx"
+mhudtrackkzt="https://bitbucket.org/Sikarii/movementhud-tracking/downloads/MovementHUD-Tracking-KZTimer-latest.smx"
 
 mapcycle='https://kzmaps.tangoworldwide.net/mapcycles/gokz.txt'
 kztmapcycle='https://kzmaps.tangoworldwide.net/mapcycles/kztimer.txt'
@@ -31,6 +33,13 @@ installGOKZ() {
     if [ -f ./KZTimerGlobal.smx ]; then
       mv ./KZ*.smx disabled
     fi
+    if [ -f ./MovementHUD-Tracking-KZTimer-latest.smx ]; then
+      mv ./MovementHUD-Tracking*.smx disabled
+    fi
+    if [ -f ./MovementHUD-Tracking-GOKZ-latest.smx ]; then
+      mv ./MovementHUD-Tracking*.smx disabled
+    fi
+    wget -q $mhudtrackgokz
     mv ./fun*.smx disabled
     mv ./playercommands.smx disabled
     cd $CSGO_DIR
@@ -48,6 +57,13 @@ installKZTimer() {
     if [ -f ./gokz-core.smx ]; then
       mv ./gokz*.smx disabled
     fi
+    if [ -f ./MovementHUD-Tracking-KZTimer-latest.smx ]; then
+      mv ./MovementHUD-Tracking*.smx disabled
+    fi
+    if [ -f ./MovementHUD-Tracking-GOKZ-latest.smx ]; then
+      mv ./MovementHUD-Tracking*.smx disabled
+    fi
+    wget -q $mhudtrackkzt
     mv ./fun*.smx disabled
     mv ./playercommands.smx disabled
     cd $CSGO_DIR
