@@ -36,6 +36,7 @@ RUN wget -q https://github.com/DevRuto/GOKZ-Scoreboard-Timer/releases/download/0
 RUN wget -q https://github.com/Franc1sco/FixHintColorMessages/raw/master/FixHintColorMessages.smx
 RUN wget -q https://github.com/ismail0234/Benson-Map-Crash-Fixer/raw/master/mapcrashfixer.smx
 RUN wget -q https://bitbucket.org/GoD_Tony/updater/downloads/updater.smx
+RUN wget -q https://bitbucket.org/kztimerglobalteam/kzserveradvisor/downloads/KZServerAdvisor-latest.smx
 
 WORKDIR /home/csgo/plugins/addons/sourcemod/extensions
 
