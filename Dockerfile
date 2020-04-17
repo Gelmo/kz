@@ -59,15 +59,11 @@ RUN wget -q https://raw.githubusercontent.com/nikooo777/ckSurf/master/csgo/addon
 WORKDIR /home/csgo
 
 COPY databases.cfg /home/csgo/plugins/addons/sourcemod/configs/
-COPY mapsync.sh /home/csgo/
-COPY mapsynckzt.sh /home/csgo/
 COPY entrypoint.sh /home/csgo/
 
 USER root
 
 RUN chmod +x /home/csgo/entrypoint.sh
-RUN chmod +x /home/csgo/mapsync.sh
-RUN chmod +x /home/csgo/mapsynckzt.sh
 
 USER csgo
 
