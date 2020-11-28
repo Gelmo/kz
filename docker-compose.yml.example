@@ -1,0 +1,16 @@
+version: '3.3'
+services:
+    kz:
+        volumes:
+            - 'csgo:/home/csgo/server'
+            - '/home/user/csgo:/var/csgo'
+        network_mode: host
+        environment:
+            - CSGO_GSLT=ABC123
+            - CSGO_WS_API_KEY=123ABC
+            - CSGO_HOSTNAME=ServerName
+            - CSGO_PW=ServerPass
+            - MAPCHOOSER=yes
+            - KZ_API_KEY=12345678-abcd-1234-abcd-1234567890ab
+        container_name: csgo
+        image: gelmo/kz
